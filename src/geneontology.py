@@ -157,7 +157,6 @@ def is_goterm(go, node_id):
 	"""Return True if the given node is a GOTerm."""
 	return go['nodes'][node_id].get('type') == 'GOTerm'
 
-
 def is_geneproduct(go, node_id):
 	"""Return True if the given node is a GeneProduct."""
 	return go['nodes'][node_id].get('type') == 'GeneProduct'
@@ -169,7 +168,6 @@ def go_parents(go, go_id): # just for clarity
 	(e.g. 'is a', 'part of').
 	"""
 	return neighbors(go,go_id)
-
 
 def go_to_gps_index(go):
 	"""Index: go_id -> set of GeneProducts directly annotated to it.
@@ -268,7 +266,6 @@ def GeneProducts(go, go_id, recursive=False, go_to_gps=None, children_index=None
 		res.update(go_to_gps.get(t, set()))
 	return sorted(res)
 
-
 def GOTerms(go, gp_id, recursive=False):
 	"""Return GO terms associated with a given GeneProduct.
 
@@ -310,11 +307,8 @@ def GOTerms(go, gp_id, recursive=False):
 				result.add(parent)
 				attente.append(parent)
 	return sorted(result)
-	
-
 
 # Depth computation
-
 
 def goterm_ids(go, namespace=None):
 	"""Return list of GO term node ids (optionally filtered by namespace)."""
@@ -326,9 +320,6 @@ def goterm_ids(go, namespace=None):
 			# print(nid,attr)
 			res.append(nid) # keep
 	return res
-
-
-
 
 def induced_goterm_subgraph(go, namespace=None):
 	"""Subgraph induced by GO terms only (optionally filtered by namespace)."""
@@ -412,7 +403,6 @@ def max_depth_go(go, namespace=None, return_path=False, reverse_path=False):
 	return max_d, max_term, path
 	
 	
-
 # Statistics functions
 
 def count_goterm(go, by_namespace=False):
@@ -486,7 +476,6 @@ def count_annotations(go):
 				n+=1 
 	return n 
 
-
 def goterms_per_geneproduct(go,recursive=False):
 	"""
 	Compute the number of GO terms associated with each GeneProduct.
@@ -519,7 +508,6 @@ def nb_geneproducts_per_goterm_fast(go):
 	return {
 	go_id: len(idx.get(go_id, set())) for go_id, attr in go["nodes"].items() if attr.get("type") == "GOTerm"
 	}
-
 
 def evidence_code_distribution(go):
 	"""
@@ -578,7 +566,6 @@ def summary(go):
 		sum_go[f"Nombre de relations {el}"] = res[el]
 	return sum_go
 
-
 # First attempt writing GeneProducts function
 """
 def go_children(go, go_id):
@@ -632,7 +619,6 @@ def GeneProducts(go, go_id, recursive=False):
 		for gp in direct_gp_for(go,term):
 			res.add(gp)
 	return sorted(res)"""
-
 
 
 if __name__ == "__main__":
