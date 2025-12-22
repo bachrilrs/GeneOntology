@@ -1,6 +1,7 @@
 # Project: Gene Ontology Analysis for Homo sapiens
 
 Author: Laroussi Bachri
+
 Date: 8/12/2025
 
 Gene Ontology Graph Analysis – Homo sapiens
@@ -22,23 +23,6 @@ The main objectives of this project are:
 - Analyze the structure of the ontology (depth, longest paths)
 - Compute biological statistics related to annotations
 
-.
-├── src/
-│   ├── graphmaster.py        # Generic graph manipulation module
-│   └── geneontology.py       # GO-specific loading and analysis functions
-│
-├── data/
-│   ├── go-basic.obo          # Gene Ontology structure (OBO format)
-│   └── 25.H_sapiens.goa      # GO annotations for Homo sapiens
-│
-├── tests/
-│   ├── test_graphmaster.py   # Unit tests for graph algorithms
-│   └── test_geneontology.py  # Unit tests for GO-specific functions
-│
-├── output/                   # Generated statistics and CSV files
-├── figures/                  # Figures generated from analyses
-├── README.md
-└── LICENSE
 
 
 Data Sources
@@ -116,8 +100,7 @@ depth_bp = max_depth_go(go, namespace="biological_process")
 depth, deepest_term, path = max_depth_go(
     go,
     namespace="biological_process",
-    return_path=True
-)
+    return_path=True)
 ```
 
 Analyses Performed
