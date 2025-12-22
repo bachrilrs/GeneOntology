@@ -58,12 +58,12 @@ assert gm.neighbors(g, 'B') == []
 
 g = gm.read_delim('data/dressing.tsv' , column_separator='\t')
 
-assert gm.edge_exists(g, 'chaussettes', 'chaussures')
+assert gm.edge_exists(g, 'socks', 'shoes')
 
-assert gm.out_degree(g , 'sous-vetements') == 2
-assert gm.out_degree(g , 'cravate') == 1
-assert gm.in_degree(g , 'veste') == 2
-assert gm.in_degree(g , 'chaussures') == 3
+assert gm.out_degree(g , 'underwear') == 2
+assert gm.out_degree(g , 'tie') == 1
+assert gm.in_degree(g , 'jacket') == 2
+assert gm.in_degree(g , 'shoes') == 3
 
 g = gm.create_graph()
 gm.add_edge(g, 'A', 'B')
@@ -100,18 +100,18 @@ gm.add_edge(g, 'Z', 'X')
 assert gm.is_acyclic(g) == False
 
 g = gm.read_delim('data/dressing.tsv' , column_separator='\t')
-res = gm.bfs(g , 'sous-vetements')
+res = gm.bfs(g , 'underwear')
 
 
 # Test de topological_sort()
 ordre = gm.topological_sort(g)
 pos = {n: i for i, n in enumerate(ordre)}
 
-assert pos['sous-vetements'] < pos['pantalon']
-assert pos['pantalon'] < pos['ceinture']
-assert pos['ceinture'] < pos['veste']
-assert pos['sous-vetements'] < pos['chaussures']
-assert pos['chaussettes'] < pos['chaussures']
+assert pos['underwear'] < pos['pants']
+assert pos['pants'] < pos['belt']
+assert pos['belt'] < pos['jacket']
+assert pos['underwear'] < pos['shoes']
+assert pos['socks'] < pos['shoes']
 
 
 
