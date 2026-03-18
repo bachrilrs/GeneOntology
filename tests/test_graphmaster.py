@@ -6,7 +6,7 @@ from pprint import pprint
 import src.graphmaster as gm
 import math
 
-
+ 
 print('Graphmaster functions test.')
 print("We used data/dressing.tsv for some tests.")
 print('...')
