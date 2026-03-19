@@ -121,7 +121,7 @@ def test_evidence_code_distribution():
     assert dist["EXP"] == 1
     assert dist["IDA"] == 1
 
-def tests_summary_statistics():
+def test_summary_statistics():
     go = make_branching_go()
     stats = summary(go)
     
@@ -182,19 +182,3 @@ def test_max_depth_bp():
     assert path == ["GO:3", "GO:2", "GO:1"]
 
 
-def run_tests():
-    test_node_types()
-    test_counts()
-    test_goterms_direct_and_recursive()
-    test_geneproducts_direct_and_recursive()
-    test_max_depth_bp()
-    test_geneproducts_union_recursive()
-    test_count_goterm_by_namespace()
-    test_evidence_code_distribution()
-    tests_summary_statistics()
-
-    print("All geneontology tests passed.")
-
-
-if __name__ == "__main__":
-    run_tests()

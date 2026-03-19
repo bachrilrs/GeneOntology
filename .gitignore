@@ -19,3 +19,5 @@ lib64/
 
 *.goa
 *.obo
+
+.DS_Store
