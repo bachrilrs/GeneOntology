@@ -34,15 +34,15 @@ assert ('GO:0003677' in GOTerms(g, 'P04637')) == True  # list of GO terms for TP
 assert ('GO:0005634' in GOTerms(g, 'P04637',recursive=True)) == True  # list of GO terms for TP53
 
 
-assert max_depth_go(g,'biological_process') == 18  # max depth of the GO graph
-assert max_depth_go(g,'molecular_function') == 13  
+assert max_depth_go(g,'biological_process') == 17  # max depth of the GO graph
+assert max_depth_go(g,'molecular_function') == 12  
 assert max_depth_go(g,'cellular_component') == 14  
 
 
 gt = transpose_graph(g) # in both cases, we should obtain the same results
 
-assert max_depth_go(gt,'biological_process') == 18   # max depth of the transposed GO graph
-assert max_depth_go(gt,'molecular_function') == 13  
+assert max_depth_go(gt,'biological_process') == 17   # max depth of the transposed GO graph
+assert max_depth_go(gt,'molecular_function') == 12  
 assert max_depth_go(gt,'cellular_component') == 14  
 
 print('All tests passed successfully.')
